@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>登录</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- <base href="http://localhost:9000/"></base> -->
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/login.css">
+  <!-- endbuild -->
+</head>
+
+<body ng-app="learnAngularApp" ng-controller="loginCtrl">
+  <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="clearfix login-bg">
+    <div class="login-container-bg width-400 radius-10">
+    </div>
+    <div class="login-container width-400 padding-20">
+      <div class="login-title margin-left-20 margin-bottom-30">
+        <h3 class=" margin-top-0">诸翟会员消费系统</h3>
+        <h3 class="text-right margin-right-20 margin-top-0">——使觉站站通</h3>
+      </div>
+      <form class="form-horizontal" method="post" name="loginForm" novalidate="novalidate">
+        <div class="form-group margin-bottom-30">
+          <label for="name" class="col-sm-3 control-label">用户名</label>
+          <div class="col-sm-8 padding-left-0">
+            <input type="text" class="form-control" ng-model="name" required>
+          </div>
+        </div>
+        <div class="form-group margin-bottom-5">
+          <label for="password" class="col-sm-3 control-label">密码</label>
+          <div class="col-sm-8 padding-left-0">
+            <input type="password" class="form-control" ng-model="password" required>
+          </div>
+        </div>
+        <div class="form-group margin-bottom-30">
+          <label for="name" class="col-sm-3"></label>
+          <div class="col-sm-8 padding-left-0">
+            <span class="text-danger" ng-show="nameRequired">请输入用户名</span>
+            <span class="text-danger" ng-show="pwdRequired">请输入密码</span>
+            <span class="text-danger pull-left" ng-show="loginError">用户名或密码错误</span>
+            <a class="pull-right" href="#">忘记密码</a>
+          </div>
+        </div>
+        <div class="clearfix text-center">
+          <button type="button" class="btn btn-primary margin-right-30 padding-left-20 padding-right-20" ng-click="userLogin()">登录</button>
+          <button type="button" class="btn btn-default padding-left-20 padding-right-20">注册</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+  <script>
+    ! function(A, n, g, u, l, a, r) {
+      A.GoogleAnalyticsObject = l, A[l] = A[l] || function() {
+          (A[l].q = A[l].q || []).push(arguments)
+        }, A[l].l = +new Date, a = n.createElement(g),
+        r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="../bower_components/angular-animate/angular-animate.js"></script>
+  <script src="../bower_components/angular-aria/angular-aria.js"></script>
+  <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="../bower_components/angular-messages/angular-messages.js"></script>
+  <script src="../bower_components/angular-resource/angular-resource.js"></script>
+  <script src="../bower_components/angular-route/angular-route.js"></script>
+  <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="../bower_components/angular-touch/angular-touch.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/login.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

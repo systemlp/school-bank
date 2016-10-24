@@ -1,0 +1,143 @@
+<p>This is the about view.</p>
+
+<!-- a simple example for bothway data bind. -->
+<input type="text" ng-model="name" />
+<!-- 大小写过滤器 -->
+<p>Hello,{{ name | uppercase }}</p>
+<p>Hello,{{ name | lowercase }}</p>
+
+<!-- currecy过滤器可以将一个数值格式化为货币格式 -->
+<p>Hello,{{ name | currency }}</p>
+<!-- 日期格式 -->
+<p>{{ date | date:'medium' }}</p>
+<p>{{ date | date:'short' }}</p>
+<p>{{ date | date:'fullDate' }}</p>
+<p>{{ date | date:'longDate' }}</p>
+<p>{{ date | date:'mediumDate' }}</p>
+<p>{{ date | date:'shortDate' }}</p>
+<p>{{ date | date:'mediumTime' }}</p>
+<p>{{ date | date:'shortTime' }}</p>
+
+<!-- 自定义日期格式 -->
+<p>{{ date | date:'MMMd, y' }}</p> <!-- Aug9, 2013 -->
+<p>{{ date | date:'EEEE, d, M' }}</p> <!-- Thursday, 9, 8-->
+<p>{{ date | date:'hh:mm:ss.sss' }}</p> <!-- 12:09:02.995 -->
+<p>{{ date | date:'yyyy-mm-dd,hh:mm:ss' }}</p> <!-- 2016-20-14,07:20:00 -->
+
+<p>{{ num | filter: findLuckNum}}</p>
+<p>{{ num | fromFrewToMuch}}</p>
+
+<div happy my-link-url="http://www.google.com" some-context="linkContext" ></div>
+<input type="text" ng-model="linkContext" />
+
+<label>someProperty = {{someProperty}}</label>
+     <input type="checkbox"
+            ng-checked="someProperty"
+            ng-init="someProperty = false"
+            ng-model="someProperty">
+
+<!-- ng-selected default: false -->
+ <label>Select Two Fish:</label>
+     <input type="checkbox"
+            ng-model="isTwoFish"><br/>
+     <select>
+       <option>One Fish</option>
+       <option ng-selected="isTwoFish">Two Fish</option>
+       <option>Three Fish</option>
+     </select>
+
+<div>I want be {{ adj.presonality }} </div>
+
+<!-- ng-href, ng-src 都能有效帮助重构和避免错误,因此在改进代码时强烈建议用它们代替原 来的href和src属性 -->
+<img ng-src="{{ googleLogo }}" />
+<div ng-controller="childController" >
+  <p>
+    {{ innerText }}
+  </p>
+</div>
+<input type="text" ng-model="person.name">
+<div ng-switch on="person.name">
+  <p ng-switch-default>And the winner is</p>
+  <h1 ng-switch-when="liupeng">{{person.name}}</h1>
+  <h1 ng-switch-when="zhengnan">is strong!</h1>
+</div>
+
+<div ng-if="2+2===5">
+  Won't see the dom node, not even in the source code.
+</div>
+<div ng-if="2+2===4">
+  Hi, I do exist.
+</div>
+<ul>
+  <li ng-repeat="person in people" ng-class="{even: !$even, odd: !$odd}">
+    {{ person.name }} live in {{ person.city }} .
+  </li>
+</ul>
+<div ng-init="greeting='HelloWorld'">
+  <p ng-bind="greeting"></p>
+</div>
+<div class="">
+  <input type="text" ng-model="equation.x" ng-change="change()"/>
+  <code>{{ equation.output }}</code>
+</div>
+<form name="signUp_form" ng-submit="submitForm()" novalidate>
+  <div ng-repeat="field in fields" class="form-group" ng-form="signup_form_input">
+    <input type="text" name="dynamic_input" class="form-control"
+      ng-required="field.isRequired"
+      ng-model="field.name"
+      placeholder="{{ field.placeholder }}" />
+      <div ng-show="signup_form_input.$invalid">
+        <span class="error" ng-show="signup_form_input.dynamic_input.$error.required">
+          The field is required.
+        </span>
+      </div>
+  </div>
+  <button type="submit" class="btn btn-default" ng-disabled="signUp_form.$invalid">
+    Submit All
+  </button>
+  <button class="btn btn-default" ng-click="count=count+1" ng-init="count=0">Increment count: {{ count }}</button>
+  <button class="btn btn-default" ng-click="decrement()" ng-init="count=0">Decrement</button>
+  <select class="form-control" ng-model="city" ng-options="city.name for city in cities">
+    <option value="">Choose City</option>
+  </select>
+  Best City: {{ city.name }}
+</form>
+<form ng-submit="submitEg()">
+  Enter text and hit enter.
+  <input class="form-control" type="text" name="student.name" ng-model="student.name" />
+  <input class="btn btn-default" type="submit" name="student.name" value="Submit" />
+  <code>people={{ student }}</code>
+  <ul ng-repeat="(index, object) in students">
+    <li>{{ object.name }}</li>
+  </ul>
+</form>
+<div ng-class="{red: x>5}" ng-if="x>5">
+  You won!
+</div>
+<button class="btn btn-primary" ng-init="x=0" ng-click="generateNumber()">Draw Number</button>
+<p>
+  Number is : {{ x }} .
+</p>
+<p>
+  Outside myScopedriective: {{ myProperty }} .
+</p>
+<div my-scopedriective my-property="happy girl!" ng-init="myProperty='Wow, this is cool!'">
+  Inside myScopedriective: {{ myProperty }} .
+</div>
+<div side-box title="Links">
+  <ul>
+    <li>First link</li>
+    <li>Second link</li>
+  </ul>
+</div>
+<div linking class="">
+  <a class="test-class" href="http://www.google.com">xxxx</a>
+  <span>aaa</span>
+  <span>bbb</span>
+</div>
+<test-dir inner-testdir></test-dir>
+<input type="text" ng-model="info" class="form-control" />
+<button type="button" ng-click="sayHello()" class="btn btn-default">say Hello</button>
+<div class="">
+  {{ renderTimer }}
+</div>
