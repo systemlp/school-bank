@@ -13,15 +13,20 @@ angular.module('learnAngularApp').controller('loginCtrl', function($scope) {
     var name = $scope.name;
     var pwd = $scope.password;
     if (!name) {
-      $scope.pwdRequired = false;
       $scope.nameRequired = true;
-    } else if (!pwd) {
+    } else {
       $scope.nameRequired = false;
+    }
+    if (!pwd) {
       $scope.pwdRequired = true;
     } else {
+      $scope.pwdRequired = false;
+    }
+    if (name && pwd) {
       $scope.nameRequired = false;
       $scope.pwdRequired = false;
       // 发送登录请求
+      location.href='/';
     }
   };
 });

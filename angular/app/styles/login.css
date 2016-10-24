@@ -1,17 +1,18 @@
 .login-bg {
   width: 100%;
   height: 100%;
-  position: relative;
-  /*background-image: url('../images/yeoman.png');*/
+  position: absolute;
+  background: url(http://cxjcrm.sit.com/assets/img/bg.jpg) no-repeat center center;
+  background-size: cover;
 }
 
 .login-container-bg {
   position: absolute;
   z-index: 0;
-  top: 150px;
+  top: 200px;
   left: 50%;
-  background-color: #0ff;
-  opacity: .8;
+  background-color: #fff;
+  opacity: .6;
   margin-left: -200px;
   height: 360px;
 }
@@ -19,7 +20,7 @@
 .login-container {
   position: absolute;
   z-index: 1;
-  top: 150px;
+  top: 200px;
   left: 50%;
   margin-left: -200px;
   font-family: '微软雅黑';

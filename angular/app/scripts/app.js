@@ -26,11 +26,11 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl',
-        controllerAs: 'login'
-      })
+      // .when('/login', {
+      //   templateUrl: 'views/login.html',
+      //   controller: 'LoginCtrl',
+      //   controllerAs: 'login'
+      // })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
