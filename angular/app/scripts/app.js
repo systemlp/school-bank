@@ -19,6 +19,14 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
+  .run(function($rootScope) {
+    console.log($rootScope);
+    $rootScope.$on('$locationChangeStart', function(e, next, current) {
+      console.log(e);
+      console.log(next);
+      console.log(current);
+    })
+  })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
