@@ -8,53 +8,77 @@
  *
  * Main module of the application.
  */
-angular
-  .module('learnAngularApp', [
-    'ngAnimate',
-    'ngAria',
-    'ngCookies',
-    'ngMessages',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      // .when('/login', {
-      //   templateUrl: 'views/login.html',
-      //   controller: 'LoginCtrl',
-      //   controllerAs: 'login'
-      // })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .when('/eventBind', {
-        templateUrl: 'views/eventBind.html',
-        controller: 'EventBindCtrl',
-        controllerAs: 'eventBind'
-      })
-      .when('/form_example', {
-        templateUrl: 'views/form_example.html',
-        controller: 'formExampleCtrl',
-        controllerAs: 'form_example'
-      })
-      // .when('/form_example/error_msg', {
-      //   templateUrl: 'views/templates/errorMsg.html',
-      //   controller: 'formExampleCtrl',
-      //   controllerAs: 'form_example'
-      // })
-      .otherwise({
-        redirectTo: '/'
-      });
+// .config([
+//   '$rootScope',
+//   function($rootScope) {
+//     $rootScope.$on('$locationChangeStart', function(event, next, current) {
+//       // console.log("user--->" + $rootScope.currentUser);
+//       // console.log("userType--->" + $rootScope.currentUserType);
+//       $rootScope.hideNavAndFoot = false;
+//       if (next.split("/").reverse()[0] === "login") {
+//         $rootScope.hideNavAndFoot = true;
+//       }
+//       if (!$rootScope.currentUser) {
+//         $rootScope.showLoading = false;
+//         $rootScope.currentUser = null;
+//         if (location.href.indexOf("appDetail") !== -1 || location.href.indexOf("jbrDetails") !== -1 || location.href.indexOf("idea") !== -1) {
+//           $rootScope.location = location.href;
+//           $state.go("login");
+//         } else if (versionProvider.internalOnly) {
+//           $state.go("login");
+//         }
+//       }
+//     });
+//   }
+// ])
+angular.module('learnAngularApp', [
+  'ngAnimate',
+  'ngAria',
+  'ngCookies',
+  'ngMessages',
+  'ngResource',
+  'ngRoute',
+  'ngSanitize',
+  'ngTouch'
+]).config(function($routeProvider) {
+  $routeProvider.when('/', {
+    templateUrl: 'views/main.html',
+    controller: 'MainCtrl',
+    controllerAs: 'main'
+  }).when('/login', {
+    templateUrl: 'views/login.html',
+    controller: 'loginCtrl',
+    controllerAs: 'login'
+  }).when('/about', {
+    templateUrl: 'views/about.html',
+    controller: 'AboutCtrl',
+    controllerAs: 'about'
+  }).when('/eventBind', {
+    templateUrl: 'views/eventBind.html',
+    controller: 'EventBindCtrl',
+    controllerAs: 'eventBind'
+  }).when('/form_example', {
+    templateUrl: 'views/form_example.html',
+    controller: 'formExampleCtrl',
+    controllerAs: 'form_example'
   })
-  // .config(function($locationProvider) {
-  //   $locationProvider.html5Mode(true);
+  // .when('/form_example/error_msg', {
+  //   templateUrl: 'views/templates/errorMsg.html',
+  //   controller: 'formExampleCtrl',
+  //   controllerAs: 'form_example'
   // })
+    .otherwise({redirectTo: '/'});
+}).run(function($rootScope) {
+  $rootScope.$on('$locationChangeStart', function(event, next, current) {
+    console.log("user--->" + $rootScope.currentUser);
+    $rootScope.hideNav = false;
+    $rootScope.isLogin = false;
+    if (next.split("/").reverse()[0] != "login") {
+      $rootScope.hideNav = true;
+      $rootScope.isLogin = true;
+    }
+  });
+});
+// .config(function($locationProvider) {
+//   $locationProvider.html5Mode(true);
+// })

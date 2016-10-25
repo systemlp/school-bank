@@ -2,12 +2,8 @@
   <div class="row">
     <div class="form-group col-md-12">
       <label for="username">Your name</label>
-      <input class="form-control" type="text" id="username" name="username" value="" ng-model="user.username"
-        placeholder="your name" ng-maxlength="20" ng-minlength="6" required
-        ensure-unique="username" ng-focus
-        ng-class="{ 'err-border': signup_form.username.$dirty && signup_form.username.$invalid}">
-      <div class="error"
-        ng-show="signup_form.username.$dirty && signup_form.username.$invalid && !signup_form.username.$focused">
+      <input class="form-control" type="text" id="username" name="username" value="" ng-model="user.username" placeholder="your name" ng-maxlength="20" ng-minlength="6" required ensure-unique="username" ng-focus ng-class="{ 'err-border': signup_form.username.$dirty && signup_form.username.$invalid}">
+      <div class="error" ng-show="signup_form.username.$dirty && signup_form.username.$invalid && !signup_form.username.$focused">
         <small class="error" ng-show="signup_form.username.$error.required">
           Your name is required.
         </small>
@@ -26,11 +22,8 @@
   <div class="row">
     <div class="form-group col-md-5">
       <label for="userEmail">Your Email</label>
-      <input class="form-control" type="email" name="userEmail" id="" required
-      ng-model="user.userEmail" value=""
-      placeholder="your email address">
-      <div class="error"
-        ng-show="signup_form.userEmail.$dirty && signup_form.userEmail.$invalid && signup_form.submitted">
+      <input class="form-control" type="email" name="userEmail" id="" required ng-model="user.userEmail" value="" placeholder="your email address">
+      <div class="error" ng-show="signup_form.userEmail.$dirty && signup_form.userEmail.$invalid && signup_form.submitted">
         <small class="error" ng-show="signup_form.userEmail.$error.required">
           Your email is required.
         </small>
@@ -41,10 +34,8 @@
     </div>
     <div class="form-group col-md-5">
       <label for="phoneNum">Phone Number</label>
-      <input class="form-control" type="number" name="phoneNum" id="phoneNum" ng-model="user.phoneNum" value=""
-      placeholder="your phone number" required>
-      <div class="error"
-        ng-show="signup_form.phoneNum.$dirty && signup_form.phoneNum.$invalid && signup_form.submitted">
+      <input class="form-control" type="number" name="phoneNum" id="phoneNum" ng-model="user.phoneNum" value="" placeholder="your phone number" required>
+      <div class="error" ng-show="signup_form.phoneNum.$dirty && signup_form.phoneNum.$invalid && signup_form.submitted">
         <small class="error" ng-show="signup_form.phoneNum.$error.required">
           Your phone number is required.
         </small>
@@ -63,9 +54,7 @@
   <div class="row">
     <div class="form-group col-md-12">
       <label for="name">Your name</label>
-      <input class="form-control" type="text" name="name" value="" id="name"
-        required ng-minlength='3' ng-maxlength="20" ng-model="user.name"
-        placeholder="name">
+      <input class="form-control" type="text" name="name" value="" id="name" required ng-minlength='3' ng-maxlength="20" ng-model="user.name" placeholder="name">
       <div class="error" ng-messages="formUseMessage.name.$error">
         <!-- <div ng-messages-include="/#/form_example/error_msg"></div> -->
       </div>

@@ -8,7 +8,7 @@
  * Controller of the learnAngularApp
  */
 angular.module('learnAngularApp')
-  .controller('MainCtrl', function () {
+  .controller('MainCtrl', function ($rootScope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
