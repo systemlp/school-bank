@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the learnAngularApp
  */
-angular.module('learnAngularApp').controller('loginCtrl', function($scope, $rootScope) {
+angular.module('learnAngularApp').controller('loginCtrl', function($scope, $rootScope, $location) {
   this.awesomeThings = ['HTML5 Boilerplate', 'AngularJS', 'Karma'];
   $scope.userLogin = function() {
     var name = $scope.name;
@@ -29,7 +29,7 @@ angular.module('learnAngularApp').controller('loginCtrl', function($scope, $root
         'name': name
       };
       // 发送登录请求
-      location.href = '/';
+      $location.path("main");
     }
   };
 });

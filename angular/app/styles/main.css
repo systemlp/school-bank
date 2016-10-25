@@ -352,6 +352,8 @@ body {
 
 .max-body {
   overflow: hidden;
+  height: 100%;
+  font: 14px/1.5 Helvetica, Arial, "Microsoft YaHei", Heiti, SimSun, sans-serif;
 }
 
 .welcome {
@@ -359,6 +361,7 @@ body {
   height: 45px;
   font: normal 14px/45px '微软雅黑';
   padding-left: 50px;
+  color: #1F72B1;
 }
 
 .welcome-icon {
@@ -379,15 +382,43 @@ body {
   bottom: 0;
   height: auto;
   background-color: #EBE9E6;
-}
-
-.left-nav .showToggle,.left-nav li{
-  height: 40px;
+  font-family: '微软雅黑';
 }
 
 .showToggle {
   margin-top: 95px;
   background-color: #F0F0F0;
+}
+
+.showToggle-icon {
+  width: 35px;
+  height: 35px;
+  background: #000;
+  margin-top: 2px;
+}
+
+.left-nav .showToggle, .left-nav li {
+  height: 40px;
+  line-height: 40px;
+}
+
+.left-nav li {
+  padding-left: 40px;
+}
+
+.left-nav li a, .top-nav li{
+  color: #9F9F9E;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.left-nav li:hover, .top-nav li div:hover {
+  background-color: #337ab7;
+  cursor: pointer;
+}
+
+.left-nav li:hover a, .top-nav li div:hover {
+  color: #fff;
 }
 
 .top-nav {
@@ -396,6 +427,7 @@ body {
   position: absolute;
   left: 200px;
   right: 0;
+  font: normal 16px '微软雅黑';
 }
 
 .top-nav li {

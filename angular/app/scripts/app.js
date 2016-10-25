@@ -40,42 +40,51 @@ angular.module('learnAngularApp', [
   'ngRoute',
   'ngSanitize',
   'ngTouch'
-]).config(function($routeProvider) {
-  $routeProvider.when('/', {
-    templateUrl: 'views/main.html',
-    controller: 'MainCtrl',
-    controllerAs: 'main'
-  }).when('/login', {
-    templateUrl: 'views/login.html',
-    controller: 'loginCtrl',
-    controllerAs: 'login'
-  }).when('/about', {
-    templateUrl: 'views/about.html',
-    controller: 'AboutCtrl',
-    controllerAs: 'about'
-  }).when('/eventBind', {
-    templateUrl: 'views/eventBind.html',
-    controller: 'EventBindCtrl',
-    controllerAs: 'eventBind'
-  }).when('/form_example', {
-    templateUrl: 'views/form_example.html',
-    controller: 'formExampleCtrl',
-    controllerAs: 'form_example'
-  })
-  // .when('/form_example/error_msg', {
-  //   templateUrl: 'views/templates/errorMsg.html',
-  //   controller: 'formExampleCtrl',
-  //   controllerAs: 'form_example'
-  // })
-    .otherwise({redirectTo: '/'});
-}).run(function($rootScope) {
+]).config([
+  '$routeProvider',
+  '$locationProvider',
+  function($routeProvider, $locationProvider) {
+    //$locationProvider.html5Mode({enabled: true, requireBase: false});
+    $routeProvider.when('/', {
+      templateUrl: 'views/login.html',
+      controller: 'loginCtrl',
+      controllerAs: 'login'
+    }).when('/main', {
+      templateUrl: 'views/main.html',
+      controller: 'MainCtrl',
+      controllerAs: 'main'
+    }).when('/about', {
+      templateUrl: 'views/about.html',
+      controller: 'AboutCtrl',
+      controllerAs: 'about'
+    }).when('/eventBind', {
+      templateUrl: 'views/eventBind.html',
+      controller: 'EventBindCtrl',
+      controllerAs: 'eventBind'
+    }).when('/form_example', {
+      templateUrl: 'views/form_example.html',
+      controller: 'formExampleCtrl',
+      controllerAs: 'form_example'
+    })
+    // .when('/form_example/error_msg', {
+    //   templateUrl: 'views/templates/errorMsg.html',
+    //   controller: 'formExampleCtrl',
+    //   controllerAs: 'form_example'
+    // })
+      .otherwise({redirectTo: '/'});
+  }
+]).run(function($rootScope, $location) {
   $rootScope.$on('$locationChangeStart', function(event, next, current) {
     console.log("user--->" + $rootScope.currentUser);
     $rootScope.hideNav = false;
     $rootScope.isLogin = false;
-    if (next.split("/").reverse()[0] != "login") {
+    $rootScope.menuClose=false;
+    if (next.split("/").reverse()[0] != '') {
       $rootScope.hideNav = true;
       $rootScope.isLogin = true;
+    }
+    if (!$rootScope.currentUser) {
+      // $location.path("/");
     }
   });
 });

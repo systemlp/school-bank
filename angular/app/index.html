@@ -19,39 +19,47 @@
   <!-- endbuild -->
 </head>
 
-<body ng-app="learnAngularApp" class="max-body">
+<body ng-app="learnAngularApp" ng-class="{'menuClose':menuClose,'max-body':true}">
   <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
   <!-- Add your site or application content here -->
-  <div class="welcome" ng-show="hideNav">
+  <div class="welcome" ng-if="hideNav">
     <span class="welcome-icon"></span>
-    <span>欢迎王娟使用诸翟会员消费系统</span>
+    <span>欢迎{{currentUser.name}}使用诸翟会员消费系统</span>
     <button type="button" class="close margin-top-10 margin-right-10">
       <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
     </button>
   </div>
-  <div class="left-nav" ng-show="hideNav">
-    <div class="showToggle">
-      <div class="showToggle-icon"></div>
+  <div class="left-nav" ng-if="hideNav">
+    <div class="showToggle clearfix">
+      <div class="showToggle-icon center-block" ng-click="menuToggle()"></div>
     </div>
     <ul class="list-unstyled">
       <li>
-        <div>快速消费</div>
+        <a href="#/main">
+          <span class="menu-title">快速消费</span>
+        </a>
       </li>
       <li>
-        <div>商品消费</div>
+        <a href="#/about">
+          <span class="menu-title">商品消费</span>
+        </a>
       </li>
       <li>
-        <div>退货退款</div>
+        <a href="#/eventBind">
+          <span class="menu-title">退货退款</span>
+        </a>
       </li>
       <li>
-        <div>未完成订单</div>
+        <a href="#/form_example">
+          <span class="menu-title">未完成订单</span>
+        </a>
       </li>
     </ul>
   </div>
-  <div class="top-nav" ng-show="hideNav">
+  <div class="top-nav" ng-if="hideNav">
     <ul class="list-inline text-center">
       <li>
         <div class="center-block">商品分类</div>
