@@ -2,17 +2,17 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  background: url(http://cxjcrm.sit.com/assets/img/bg.jpg) no-repeat center center;
+  background: url('../images/login-bg.png') no-repeat center center;
   background-size: cover;
 }
 
 .login-container-bg {
   position: absolute;
   z-index: 0;
-  top: 200px;
+  top: 150px;
   left: 50%;
   background-color: #fff;
-  opacity: .6;
+  opacity: .8;
   margin-left: -200px;
   height: 360px;
 }
@@ -20,12 +20,24 @@
 .login-container {
   position: absolute;
   z-index: 1;
-  top: 200px;
+  top: 150px;
   left: 50%;
   margin-left: -200px;
   font-family: '微软雅黑';
 }
 
 .login-title {
-  color: #3678fe;
+  color: #FE9E1E;
+  background-color: #4C4C4B;
+  margin-bottom: 45px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.login-title>div {
+  width: 50%;
+}
+
+.regError {
+  height: 14px;
 }

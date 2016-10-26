@@ -1,41 +1,79 @@
 <div class="clearfix login-bg">
   <div class="login-container-bg width-400 radius-10">
   </div>
-  <div class="login-container width-400 padding-20">
-    <div class="login-title margin-left-20 margin-bottom-30">
-      <h3 class=" margin-top-0">诸翟会员消费系统</h3>
-      <h3 class="text-right margin-right-20 margin-top-0">——使觉站站通</h3>
+  <div class="login-container width-400">
+    <div class="login-title clearfix padding-top-5 padding-bottom-5">
+      <div class="center-block">
+        <p class="margin-bottom-0">诸翟会员消费系统</p>
+        <p class="text-right margin-bottom-0">——使觉站站通</p>
+      </div>
     </div>
-    <form class="form-horizontal" method="post" name="loginForm" novalidate="novalidate">
+    <form ng-show="openLogin" class="form-horizontal" method="post" name="loginForm" novalidate="novalidate">
       <div class="form-group margin-bottom-5">
-        <label for="name" class="col-sm-3 control-label">用户名</label>
+        <label for="name" class="col-sm-3 control-label text-muted">用户名</label>
         <div class="col-sm-8 padding-left-0">
           <input type="text" class="form-control" ng-model="name" required>
         </div>
       </div>
       <div class="form-group">
-        <label for="name" class="col-sm-3 control-label"></label>
+        <label class="col-sm-3"></label>
         <div class="col-sm-8 padding-left-0">
           <span class="text-danger" ng-show="nameRequired">请输入用户名</span>
         </div>
       </div>
       <div class="form-group margin-bottom-5">
-        <label for="password" class="col-sm-3 control-label">密码</label>
+        <label for="password" class="col-sm-3 control-label text-muted">密码</label>
         <div class="col-sm-8 padding-left-0">
           <input type="password" class="form-control" ng-model="password" required>
         </div>
       </div>
       <div class="form-group margin-bottom-30">
-        <label for="name" class="col-sm-3"></label>
+        <label for="password" class="col-sm-3"></label>
         <div class="col-sm-8 padding-left-0">
-          <span class="text-danger" ng-show="pwdRequired">请输入密码</span>
-          <span class="text-danger pull-left" ng-show="loginError">用户名或密码错误</span>
-          <a class="pull-right text-muted" href="#">忘记密码</a>
+          <span class="text-danger" ng-if="pwdRequired">请输入密码</span>
+          <span class="text-danger pull-left" ng-if="loginError">用户名或密码错误</span>
+          <a class="pull-right text-muted" href="#">忘记密码?</a>
         </div>
       </div>
       <div class="clearfix text-center">
-        <button type="button" class="btn btn-primary margin-right-30 padding-left-20 padding-right-20" ng-click="userLogin()">登录</button>
-        <button type="button" class="btn btn-default padding-left-20 padding-right-20">注册</button>
+        <button type="button" class="btn btn-warning margin-right-30 padding-left-20 padding-right-20 padding-top-5 padding-bottom-5" ng-click="userLogin()">登录</button>
+        <button type="button" class="btn btn-default padding-left-20 padding-right-20 padding-top-5 padding-bottom-5" ng-click="openReg()">注册</button>
+      </div>
+    </form>
+    <form ng-show="isRegister" class="form-horizontal" method="post" name="loginForm" novalidate="novalidate">
+      <div class="form-group">
+        <label for="name" class="col-sm-3 control-label text-muted">用户名</label>
+        <div class="col-sm-8 padding-left-0">
+          <input type="text" class="form-control" ng-model="reg.name" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name" class="col-sm-3 control-label text-muted">手机号</label>
+        <div class="col-sm-8 padding-left-0">
+          <input type="text" class="form-control" ng-model="reg.mobile" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name" class="col-sm-3 control-label text-muted">密码</label>
+        <div class="col-sm-8 padding-left-0">
+          <input type="text" class="form-control" ng-model="reg.pwd" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name" class="col-sm-3 control-label text-muted">确认密码</label>
+        <div class="col-sm-8 padding-left-0">
+          <input type="text" class="form-control" ng-model="reg.repwd" required>
+        </div>
+      </div>
+      <div class="form-group regError margin-bottom-10">
+        <label for="password" class="col-sm-3"></label>
+        <div class="col-sm-8 padding-left-0">
+          <span class="text-danger" ng-show="false">请输入密码</span>
+        </div>
+      </div>
+      <div class="clearfix text-center">
+        <button type="button" class="btn btn-warning margin-right-30 padding-left-20 padding-right-20 padding-top-5 padding-bottom-5" ng-click="userReg()">注册</button>
+        <button type="button" class="btn btn-default padding-left-20 padding-right-20 padding-top-5 padding-bottom-5" ng-click="cancelReg()">取消</button>
       </div>
     </form>
   </div>
