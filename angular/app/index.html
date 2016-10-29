@@ -27,6 +27,11 @@
   <!-- Add your site or application content here -->
   <div class="welcome" ng-if="hideNav">
     <div class="sys-name text-center">诸翟使觉消费系统</div>
+    <div class="pull-right margin-right-30">
+      <img src="images/yeoman.png" alt="" class="img-rounded avatar margin-right-10">
+      <span class="margin-right-10">{{'zhengnan'}}</span>
+      <span class="margin-right-10">退出</span>
+    </div>
   </div>
   <div class="left-nav" ng-if="hideNav">
     <dl class="home-menu">
@@ -34,7 +39,7 @@
     </dl>
     <dl>
       <dt><a href="javascript:;">积分管理</a></dt>
-      <dd><a href="">标准设置</a></dd>
+      <dd><a href="#/standardSetting">标准设置</a></dd>
       <dd><a href="">指标评定</a></dd>
       <dd><a href="">使觉币管理</a></dd>
     </dl>
@@ -84,6 +89,7 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
   <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/echarts/dist/echarts.min.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -92,9 +98,11 @@
   <script src="scripts/service/service.js"></script>
   <script src="scripts/controllers/main.js"></script>
   <script src="scripts/controllers/login.js"></script>
+  <script src="scripts/controllers/home.js"></script>
   <script src="scripts/controllers/about.js"></script>
   <script src="scripts/controllers/eventBind.js"></script>
   <script src="scripts/controllers/form_example.js"></script>
+  <script src="scripts/controllers/standardSetting.js"></script>
   <!-- endbuild -->
 </body>
 
