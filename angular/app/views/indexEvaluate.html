@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="../styles/indexEvaluate.css">
+<div class="standard-cont">
+  <!-- 头部 -->
+  <div class="page-caption margin-bottom-10">
+    <span class="margin-left-10">指标评定</span>
+  </div>
+  <!-- 筛选部分 -->
+  <form class="search-filter-wrapper">
+    <div class="form-horizontal form-group grade-select-box">
+      <div class="col-md-12">
+        <label for="" class="col-md-4 control-label">选择年级</label>
+        <div class="col-md-8">
+          <select class="form-control" name="">
+            <option value="" ng-repeat="item in grade">{{item}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-horizontal form-group class-select-box">
+      <div class="col-md-12">
+        <label for="" class="col-md-4 control-label">选择班级</label>
+        <div class="col-md-8">
+          <select class="form-control" name="">
+            <option value="" ng-repeat="item in class">{{item}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-horizontal form-group date-select-box">
+      <div class="col-md-12">
+        <label for="" class="col-md-4 control-label">选择年月</label>
+        <!-- <div class='input-group date' id='datetimepicker1'>
+          <input type='text' class="form-control" ng-model="date" />
+          <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div> -->
+        <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+          <input type="text" class="form-control" readonly>
+          <span class="input-group-btn">
+          <button class="btn default" type="button"><span class="glyphicon glyphicon-calendar"></span></button>
+          </span>
+        </div>
+      </div>
+    </div>
+</form>

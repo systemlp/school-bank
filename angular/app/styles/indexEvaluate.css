@@ -1,0 +1,6 @@
+.search-filter-wrapper {
+  display: flex;
+}
+.class-select-box, .grade-select-box, .date-select-box{
+  flex: 1;
+}

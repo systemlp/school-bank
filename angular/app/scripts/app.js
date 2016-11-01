@@ -57,6 +57,10 @@ angular.module('learnAngularApp', [
       templateUrl: 'views/standardSetting.html',
       controller: 'standardSettingCtrl',
       controllerAs: 'standardSetting'
+    }).when('/indexEvaluate', {
+      templateUrl: 'views/indexEvaluate.html',
+      controller: 'indexEvaluateCtrl',
+      controllerAs: 'indexEvaluate'
     }).when('/main', {
       templateUrl: 'views/main.html',
       controller: 'MainCtrl',
