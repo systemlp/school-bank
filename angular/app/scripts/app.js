@@ -73,6 +73,10 @@ angular.module('learnAngularApp', [
       templateUrl: 'views/form_example.html',
       controller: 'formExampleCtrl',
       controllerAs: 'form_example'
+    }).when('/sjb_manage', {
+      templateUrl: 'views/sjb_manage.html',
+      controller: 'sjbManageCtrl',
+      controllerAs: 'sjb_manage'
     })
     // .when('/form_example/error_msg', {
     //   templateUrl: 'views/templates/errorMsg.html',
