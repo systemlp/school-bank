@@ -64,7 +64,7 @@ jQuery.Confirm = function(message, imageUrl, fn) {
 	var content = '<div id="confirm_Modal" class="modal fade" aria-hidden="true" role="basic" tabindex="-1" style="display: none;z-index:100001!important;"><div class="modal-dialog" style="width: 300px;margin-top:140px;"><div class="modal-content"><div class="modal-header">	<h4 class="modal-title" style="text-align:left;">提示</h4></div><div class="modal-body">'
 			+ imageTag
 			+ alertMessage
-			+ '</div><div class="modal-footer"><button class="btn btn-primary" data-dismiss="modal" id="okDopConfirmButton" type="button">确定</button><button class="btn default" type="button" id="destoryDopConfirmButton">取消</button></div></div></div></div>';
+			+ '</div><div class="modal-footer"><button class="btn btn-primary" data-dismiss="modal" id="okDopConfirmButton" type="button">确定</button><button class="btn btn-default" type="button" id="destoryDopConfirmButton">取消</button></div></div></div></div>';
 	// 添加confirm弹出框
 	var Confirm_Modal = [];
 	function addConfirm() {

@@ -14,5 +14,4 @@ angular.module('learnAngularApp').controller('sjbManageCtrl', function($scope, $
     {},
     {}
   ];
-  $.Confirm('hello');
 });
