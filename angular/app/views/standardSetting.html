@@ -4,10 +4,10 @@
     <span class="margin-left-10">标准设置</span>
   </div>
   <div class="container-fluid margin-10">
-    <div class="form-horizontal form-group">
+    <div class="form-horizontal form-group clearfix">
       <div class="col-md-4">
-        <label for="" class="col-md-3 control-label">请选择存储站点</label>
-        <div class="col-md-9">
+        <label for="" class="col-md-4 control-label padding-left-0 padding-right-0">请选择存储站点</label>
+        <div class="col-md-8">
           <select class="form-control" name="">
             <option value="">学习站1</option>
             <option value="">学习站2</option>
@@ -17,18 +17,21 @@
         </div>
       </div>
     </div>
-    <div class="black-bg clearfix margin-top-60">
+    <div class="black-bg clearfix">
+      <div class="margin-top-10"></div>
       <div class="dropdown operation-menu">
-        <div class="adjust-center" id="dropdownMenu1" data-toggle="dropdown">
-          当前选中行：{{'一等级'}}
+        当前选中行：
+        <span class="adjust-center" id="dropdownMenu1" data-toggle="dropdown">
+          {{'一等级'}}
           <span class="caret adjust-center"></span>
-        </div>
+        </span>
         <ul class="dropdown-menu dropdown-menu-font" role="menu" aria-labelledby="dropdownMenu1">
           <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)"><i class="glyphicon glyphicon-plus margin-right-10"></i>增加</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)"><i class="glyphicon glyphicon-trash margin-right-10"></i>删除</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)"><i class="glyphicon glyphicon-pencil margin-right-10"></i>修改</a></li>
         </ul>
       </div>
+      <div class="margin-top-10"></div>
       <div class="clearfix">
         <div class="col-md-6 table-responsive">
           <table class="table table-bordered text-center orange-border">

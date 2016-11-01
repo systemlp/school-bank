@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="../styles/sjbManage.css">
+<div class="sjb-cont">
+  <div class="page-caption margin-bottom-10">
+    <span class="margin-left-10">使觉币管理</span>
+  </div>
+  <div class="container-fluid margin-10">
+    <form class="form-group form-horizontal clearfix">
+      <div class="col-md-12">
+        <div class="form-group col-md-3 padding-lr">
+          <label for="" class="col-md-4 control-label">选择学期</label>
+          <div class="col-md-8 padding-left-0">
+            <select name="" id="" class="form-control"></select>
+          </div>
+        </div>
+        <div class="form-group col-md-3 padding-lr">
+          <label for="" class="col-md-4 control-label">选择年级</label>
+          <div class="col-md-8 padding-left-0">
+            <select name="" id="" class="form-control"></select>
+          </div>
+        </div>
+        <div class="form-group col-md-3 padding-lr">
+          <label for="" class="col-md-4 control-label">选择班级</label>
+          <div class="col-md-8 padding-left-0">
+            <select name="" id="" class="form-control"></select>
+          </div>
+        </div>
+        <div class="form-group col-md-3 text-center">
+          <button class="btn btn-warning margin-right-10">查询</button>
+          <button class="btn btn-default">导出</button>
+        </div>
+      </div>
+    </form>
+    <div class="black-bg clearfix padding-10">
+      <div class="center-block table-responsive">
+        <table class="table table-bordered text-center orange-border">
+          <thead>
+            <tr>
+              <td>序号</td>
+              <td>会员号</td>
+              <td>学生姓名</td>
+              <td>2月</td>
+              <td>3月</td>
+              <td>4月</td>
+              <td>5月</td>
+              <td>6月</td>
+              <td>本学期加币总数</td>
+              <td>管理</td>
+              <td>加减币记录</td>
+              <td>删除</td>
+            </tr>
+          </thead>
+          <tbody class="orange-border">
+            <tr ng-repeat='item in settingData'>
+              <td>序号</td>
+              <td>会员号</td>
+              <td>学生姓名</td>
+              <td>2月</td>
+              <td>3月</td>
+              <td>4月</td>
+              <td>5月</td>
+              <td>6月</td>
+              <td>本学期加币总数</td>
+              <td>管理</td>
+              <td>加减币记录</td>
+              <td>删除</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
