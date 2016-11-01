@@ -18,19 +18,16 @@
       </div>
     </div>
     <div class="black-bg clearfix margin-top-60">
-      <div class="clearfix margin-bottom-20">
-        <div class="col-md-6">
-          <div class="operate-row text-right">
-            <div>选中当前行：<span class="curr-level">{{'一等级'}}</span></div>
-            <div class="operate-cont text-left">
-              <ul class="list-unstyled">
-                <li>增加</li>
-                <li>删除</li>
-                <li>修改</li>
-              </ul>
-            </div>
-          </div>
+      <div class="dropdown operation-menu">
+        <div class="adjust-center" id="dropdownMenu1" data-toggle="dropdown">
+          当前选中行：{{'一等级'}}
+          <span class="caret adjust-center"></span>
         </div>
+        <ul class="dropdown-menu dropdown-menu-font" role="menu" aria-labelledby="dropdownMenu1">
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)"><i class="glyphicon glyphicon-plus margin-right-10"></i>增加</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)"><i class="glyphicon glyphicon-trash margin-right-10"></i>删除</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0)"><i class="glyphicon glyphicon-pencil margin-right-10"></i>修改</a></li>
+        </ul>
       </div>
       <div class="clearfix">
         <div class="col-md-6 table-responsive">
@@ -45,26 +42,12 @@
               </tr>
             </thead>
             <tbody class="orange-border">
-              <tr>
-                <td>1</td>
-                <td>一等级</td>
-                <td>10</td>
-                <td>10</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>二等级</td>
-                <td>6</td>
-                <td>6</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>三等级</td>
-                <td>2</td>
-                <td>2</td>
-                <td></td>
+              <tr ng-repeat='item in settingData'>
+                <td>{{$index + 1}}</td>
+                <td>{{item.level}}</td>
+                <td>{{item.score}}</td>
+                <td>{{item.coin}}</td>
+                <td>{{item.remarks}}</td>
               </tr>
             </tbody>
           </table>
