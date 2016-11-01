@@ -1,0 +1,31 @@
+.standard-cont {
+  color: #999999;
+}
+
+.standard-cont .operate-row {
+  font: normal 14px/30px '黑体';
+  color: #adadad;
+}
+
+.operate-cont {
+  position: absolute;
+  background-color: #EEEEEE;
+  width: 150px;
+  height: 170px;
+  top: 30px;
+  right: 0;
+  z-index: 1;
+}
+
+.adjust-center: {
+  margin-left: 80px;
+}
+
+.operation-menu {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.dropdown-menu-font a {
+  color: #888 !important;
+}

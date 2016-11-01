@@ -49,6 +49,14 @@ angular.module('learnAngularApp', [
       templateUrl: 'views/login.html',
       controller: 'loginCtrl',
       controllerAs: 'login'
+    }).when('/home', {
+      templateUrl: 'views/home.html',
+      controller: 'homeCtrl',
+      controllerAs: 'home'
+    }).when('/standardSetting', {
+      templateUrl: 'views/standardSetting.html',
+      controller: 'standardSettingCtrl',
+      controllerAs: 'standardSetting'
     }).when('/main', {
       templateUrl: 'views/main.html',
       controller: 'MainCtrl',

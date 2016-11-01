@@ -1,0 +1,17 @@
+.home-cont .page-caption {
+  color: #FE9E1E;
+}
+
+.home-cont .home-welc span {
+  font: 300 16px/30px '黑体';
+}
+
+.home-cont .block {
+  height: 300px;
+  background-color: #4D4D4D;
+}
+
+.home-cont .block-title {
+  color: #fff;
+  font: normal 16px/30px '黑体';
+}
