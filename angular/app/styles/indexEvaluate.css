@@ -1,0 +1,68 @@
+.search-filter-wrapper {
+  display: flex;
+}
+.class-select-box, .grade-select-box, .date-select-box {
+  flex: 3;
+}
+.btn-box{
+  flex: 2;
+}
+.tableContainer {
+  width: 96%;
+  background-color: #4D4D4D;
+  margin: 0 auto 10px;
+}
+.tableContainer {
+  color: #fff;
+  padding: 1%;
+  box-sizing: border-box;
+}
+.innerContainer {
+  display: flex;
+}
+.tableContainer p {
+  font-size: 16px;
+}
+.innerContainer table{
+  width: 60%;
+}
+.tableContainer td{
+  border: 1px solid #f90;
+  border-collapse: collapse;
+  height: 34px;
+}
+.table-part {
+  flex: 3
+}
+.remarks-part {
+  flex: 2
+}
+.remarks-part li {
+  list-style: none;
+}
+.btn-sm {
+  width: 60px;
+}
+.has-select {
+  position: relative;
+}
+.sel-in-tab {
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  display: flex;
+}
+.sel-in-tab .sel {
+  flex: 3;
+}
+.sel-in-tab .icon {
+  flex: 1;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-top: 7px;
+  margin-left: 8px;
+}
+.cover-tab {
+  width: 100%;
+}
