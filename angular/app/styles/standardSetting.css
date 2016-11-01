@@ -16,3 +16,16 @@
   right: 0;
   z-index: 1;
 }
+
+.adjust-center: {
+  margin-left: 80px;
+}
+
+.operation-menu {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.dropdown-menu-font a {
+  color: #888 !important;
+}
