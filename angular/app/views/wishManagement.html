@@ -9,33 +9,45 @@
         <div class="col-md-4">
           <label for="" class="col-md-3 control-label">开始时间</label>
           <div class="col-md-9">
-            <input type="text" class="form-control">
+            <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+              <input type="text" class="form-control" readonly>
+              <span class="input-group-btn">
+                <button class="btn default" type="button"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </div>
           </div>
         </div>
         <div class="col-md-4">
           <label for="" class="col-md-3 control-label">结束时间</label>
           <div class="col-md-9">
-            <input type="text" class="form-control">
+            <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+              <input type="text" class="form-control" readonly>
+              <span class="input-group-btn">
+                <button class="btn default" type="button"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </div>
           </div>
         </div>
         <div class="col-md-4">
           <label for="" class="col-md-3 control-label">选择班级</label>
           <div class="col-md-9">
-            <input type="text" class="form-control">
+            <select class="form-control">
+            </select>
           </div>
         </div>
       </div>
       <div class="form-group">
         <div class="col-md-4">
-          <label for="" class="col-md-3 control-label">开始时间</label>
+          <label for="" class="col-md-3 control-label">姓名</label>
           <div class="col-md-9">
             <input type="text" class="form-control">
           </div>
         </div>
         <div class="col-md-4">
-          <label for="" class="col-md-3 control-label">结束时间</label>
+          <label for="" class="col-md-3 control-label">存储站</label>
           <div class="col-md-9">
-            <input type="text" class="form-control">
+            <select class="form-control">
+            </select>
           </div>
         </div>
         <div class="col-md-4 text-right">
@@ -53,19 +65,23 @@
           <thead>
             <tr>
               <td>序号</td>
-              <td>等级划分</td>
-              <td>分数</td>
-              <td>使觉币</td>
-              <td>备注</td>
+              <td>姓名</td>
+              <td>日期</td>
+              <td>心愿</td>
+              <td>支持率</td>
+              <td>站点</td>
+              <td>站点</td>
             </tr>
           </thead>
           <tbody class="orange-border">
             <tr ng-repeat='item in settingData'>
-              <td>{{$index + 1}}</td>
-              <td>{{item.level}}</td>
-              <td>{{item.score}}</td>
-              <td>{{item.coin}}</td>
-              <td>{{item.remarks}}</td>
+              <td>序号</td>
+              <td>姓名</td>
+              <td>日期</td>
+              <td>心愿</td>
+              <td>支持率</td>
+              <td>站点</td>
+              <td>站点</td>
             </tr>
           </tbody>
         </table>
