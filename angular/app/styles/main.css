@@ -465,6 +465,7 @@ body {
   width: auto;
   height: auto;
   clear: both;
+  color: #fff;
 }
 
 .orange-border, .orange-border td {
@@ -476,6 +477,6 @@ label {
   font-weight: 400;
 }
 
-.cursor-pointer{
+.cursor-pointer {
   cursor: pointer;
 }
