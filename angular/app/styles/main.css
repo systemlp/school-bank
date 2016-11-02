@@ -485,3 +485,11 @@ label {
 .cursor-pointer {
   cursor: pointer;
 }
+/*宽屏弹窗*/
+.modal .modal-wide{
+  width: 60%;
+}
+/*满屏弹窗*/
+.modal .modal-full {
+    width: 100%;
+}
