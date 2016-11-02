@@ -20,7 +20,7 @@ angular.module('learnAngularApp').controller('loginCtrl', function($scope, $root
         'name': name
       };
       // 发送登录请求
-      $location.path("main");
+      $location.path("home");
     }
   };
   $scope.openReg = function() {

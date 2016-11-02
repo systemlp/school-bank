@@ -382,6 +382,11 @@ body {
   background-color: #333333;
 }
 
+.welcome a {
+  font: normal 14px/45px '黑体';
+  color: #FE9E1E;
+}
+
 .avatar {
   width: 36px;
   height: 36px;

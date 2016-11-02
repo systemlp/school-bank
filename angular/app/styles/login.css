@@ -26,6 +26,11 @@
   font-family: '黑体';
 }
 
+
+.login-container .registerForm{
+  margin-top: -15px;
+}
+
 .login-title {
   color: #FE9E1E;
   background-color: #4C4C4B;
