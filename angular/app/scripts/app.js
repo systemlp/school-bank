@@ -61,6 +61,10 @@ angular.module('learnAngularApp', [
       templateUrl: 'views/indexEvaluate.html',
       controller: 'indexEvaluateCtrl',
       controllerAs: 'indexEvaluate'
+    }).when('/wishManagement', {
+      templateUrl: 'views/wishManagement.html',
+      controller: 'wishManagementCtrl',
+      controllerAs: 'wishManagement'
     }).when('/main', {
       templateUrl: 'views/main.html',
       controller: 'MainCtrl',
