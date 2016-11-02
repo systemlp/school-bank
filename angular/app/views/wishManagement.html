@@ -3,5 +3,122 @@
   <div class="page-caption margin-bottom-10">
     <span class="margin-left-10">心愿管理</span>
   </div>
-  
+  <div class="container-fluid">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <div class="col-md-4">
+          <label for="" class="col-md-3 control-label">开始时间</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="" class="col-md-3 control-label">结束时间</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="" class="col-md-3 control-label">选择班级</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-4">
+          <label for="" class="col-md-3 control-label">开始时间</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="" class="col-md-3 control-label">结束时间</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-4 text-right">
+          <button class="btn btn-warning margin-right-10">查询</button>
+          <button class="btn btn-default margin-right-20">导出</button>
+        </div>
+      </div>
+    </form>
+    <div class="clearfix black-bg">
+      <div class="text-right margin-top-10 padding-right-10">
+        <i data-toggle="modal" data-target="#basic" class="glyphicon glyphicon-plus icon cursor-pointer"></i>
+      </div>
+      <div class="table-responsive margin-10">
+        <table class="table table-bordered text-center orange-border">
+          <thead>
+            <tr>
+              <td>序号</td>
+              <td>等级划分</td>
+              <td>分数</td>
+              <td>使觉币</td>
+              <td>备注</td>
+            </tr>
+          </thead>
+          <tbody class="orange-border">
+            <tr ng-repeat='item in settingData'>
+              <td>{{$index + 1}}</td>
+              <td>{{item.level}}</td>
+              <td>{{item.score}}</td>
+              <td>{{item.coin}}</td>
+              <td>{{item.remarks}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="basic" tabindex="-1" role="basic" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+            </button>
+        <h4 class="modal-title">添加</h4>
+      </div>
+      <div class="modal-body">
+        <fomr class="form-horizontal">
+          <div class="form-group">
+            <label for="" class="col-md-2 control-label">姓名</label>
+            <div class="col-md-9">
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-md-2 control-label">年级</label>
+            <div class="col-md-9">
+              <select class="form-control">
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-md-2 control-label">心愿</label>
+            <div class="col-md-9">
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-md-2 control-label">站点</label>
+            <div class="col-md-9">
+              <select class="form-control">
+              </select>
+            </div>
+          </div>
+        </fomr>
+      </div>
+      <div class="modal-footer">
+        <span class="text-danger pull-left margin-top-5">错误信息</span>
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
 </div>
