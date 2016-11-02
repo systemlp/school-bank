@@ -1,3 +1,11 @@
 /*.sjb-cont {
   color: #999999;
 }*/
+.normal-table {
+  width: 100%;
+}
+.normal-table td {
+  border: 1px solid #f90;
+  border-collapse: collapse;
+  height: 34px;
+}
