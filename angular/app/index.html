@@ -16,7 +16,6 @@
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/login.css">
   <!-- endbuild -->
 </head>
 
@@ -32,7 +31,7 @@
     <div class="sys-name text-center">诸翟使觉银行系统</div>
     <div class="pull-right margin-right-30">
       <img src="images/yeoman.png" alt="" class="img-rounded avatar margin-right-10">
-      <span class="margin-right-10">{{'zhengnan'}}</span>
+      <span class="margin-right-10">{{currentUser.name}}</span>
       <span class="margin-right-10"><a href="#/">退出</a></span>
     </div>
   </div>
@@ -44,7 +43,7 @@
       <dt><a href="javascript:;">积分管理</a></dt>
       <dd><a href="#/standardSetting">标准设置</a></dd>
       <dd><a href="#/indexEvaluate">指标评定</a></dd>
-      <dd><a href="#/sjb_manage">使觉币管理</a></dd>
+      <dd><a href="#/sjbManage">使觉币管理</a></dd>
     </dl>
     <dl>
       <dt><a href="javascript:;">心愿</a></dt>
@@ -52,9 +51,9 @@
     </dl>
     <dl>
       <dt><a href="javascript:;">用户管理</a></dt>
-      <dd><a href="">组织管理</a></dd>
-      <dd><a href="">角色权限</a></dd>
-      <dd><a href="">用户管理</a></dd>
+      <dd><a href="#/orgManage">组织管理</a></dd>
+      <dd><a href="#/roleManage">角色权限</a></dd>
+      <dd><a href="#/userManage">用户管理</a></dd>
     </dl>
     <dl>
       <dt><a href="javascript:;">系统管理</a></dt>
@@ -112,6 +111,9 @@
   <script src="scripts/controllers/indexEvaluate.js"></script>
   <script src="scripts/controllers/sjbManage.js"></script>
   <script src="scripts/controllers/wishManagement.js"></script>
+  <script src="scripts/controllers/orgManage.js"></script>
+  <script src="scripts/controllers/roleManage.js"></script>
+  <script src="scripts/controllers/userManage.js"></script>
   <!-- endbuild -->
 </body>
 

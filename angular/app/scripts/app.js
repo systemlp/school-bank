@@ -58,10 +58,22 @@ angular.module('learnAngularApp', [
       templateUrl: 'views/form_example.html',
       controller: 'formExampleCtrl',
       controllerAs: 'form_example'
-    }).when('/sjb_manage', {
+    }).when('/sjbManage', {
       templateUrl: 'views/sjb_manage.html',
       controller: 'sjbManageCtrl',
-      controllerAs: 'sjb_manage'
+      controllerAs: 'sjbManage'
+    }).when('/orgManage', {
+      templateUrl: 'views/org_manage.html',
+      controller: 'orgManageCtrl',
+      controllerAs: 'orgManage'
+    }).when('/roleManage', {
+      templateUrl: 'views/role_manage.html',
+      controller: 'roleManageCtrl',
+      controllerAs: 'roleManage'
+    }).when('/userManage', {
+      templateUrl: 'views/user_manage.html',
+      controller: 'userManageCtrl',
+      controllerAs: 'userManage'
     })
     // .when('/form_example/error_msg', {
     //   templateUrl: 'views/templates/errorMsg.html',
@@ -72,16 +84,17 @@ angular.module('learnAngularApp', [
   }
 ]).run(function($rootScope, $location) {
   $rootScope.$on('$locationChangeStart', function(event, next, current) {
-    console.log("user--->" + $rootScope.currentUser);
     $rootScope.hideNav = false;
     $rootScope.isLogin = false;
     $rootScope.menuClose = false;
     if (next.split("/").reverse()[0] != '') {
+      // 取出当前用户
+      $rootScope.currentUser = angular.fromJson(sessionStorage.getItem("currentUser"));
       $rootScope.hideNav = true;
       $rootScope.isLogin = true;
     }
     if (!$rootScope.currentUser) {
-      // $location.path("/");
+      $location.path("/");
     }
   });
 });

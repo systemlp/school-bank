@@ -9,6 +9,8 @@
  */
 angular.module('learnAngularApp').controller('loginCtrl', function($scope, $rootScope, $location) {
   this.awesomeThings = ['HTML5 Boilerplate', 'AngularJS', 'Karma'];
+  // 清除所有会话信息
+  sessionStorage.clear();
   $scope.openLogin = true;
   $scope.userLogin = function() {
     var name = $scope.name;
@@ -16,10 +18,11 @@ angular.module('learnAngularApp').controller('loginCtrl', function($scope, $root
     $scope.nameRequired = !name;
     $scope.pwdRequired = !pwd;
     if (name && pwd) {
-      $rootScope.currentUser = {
+      // 发送登录请求
+      var currentUser = {
         'name': name
       };
-      // 发送登录请求
+      sessionStorage.setItem("currentUser", angular.toJson(currentUser,true));
       $location.path("home");
     }
   };
