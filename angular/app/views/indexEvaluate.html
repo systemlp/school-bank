@@ -5,102 +5,101 @@
     <span class="margin-left-10">指标评定</span>
   </div>
   <!-- 筛选部分 -->
-  <form class="search-filter-wrapper">
-    <div class="form-horizontal form-group grade-select-box">
-      <div class="col-md-12">
-        <label for="" class="col-md-4 control-label">选择年级</label>
-        <div class="col-md-8">
-          <select class="form-control" name="">
-            <option value="" ng-repeat="item in grade">{{item}}</option>
-          </select>
+  <div class="container-fluid">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <div class="col-md-3">
+          <label for="" class="col-md-4 control-label">选择年级</label>
+          <div class="col-md-8">
+            <select class="form-control" name="">
+                <option value="" ng-repeat="item in grade">{{item}}</option>
+              </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="" class="col-md-4 control-label">选择班级</label>
+          <div class="col-md-8">
+            <select class="form-control" name="">
+                <option value="" ng-repeat="item in class">{{item}}</option>
+              </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="" class="col-md-4 control-label">选择年月</label>
+          <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+            <input type="text" class="form-control">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-calendar"></span></button>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-3 text-center">
+          <button class="btn btn-warning margin-right-10">查询</button>
+          <button class="btn btn-default">导出</button>
+        </div>
+      </div>
+    </form>
+    <div class="tableContainer">
+      <p>标准考核</p>
+      <div class="innerContainer">
+        <table class="text-center table-part">
+          <thead>
+            <tr>
+              <td>姓名</td>
+              <td colspan="5">标准考核项</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="i in evaluteItem">
+              <td>{{i.name}}</td>
+              <td>{{i.eVal1}}</td>
+              <td>{{i.eVal2}}</td>
+              <td>{{i.eVal3}}</td>
+              <td>{{i.eVal4}}</td>
+              <td>{{i.eVal5}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="remarks-part">
+          <ul ng-repeat="i in evaluateRemarks">
+            <li><span>{{$index + 1}}.</span>{{i}}</li>
+          </ul>
+          <button class="btn margin-left-35 btn-sm btn-default" type="button" name="button">维护</button>
         </div>
       </div>
     </div>
-    <div class="form-horizontal form-group class-select-box">
-      <div class="col-md-12">
-        <label for="" class="col-md-4 control-label">选择班级</label>
-        <div class="col-md-8">
-          <select class="form-control" name="">
-            <option value="" ng-repeat="item in class">{{item}}</option>
-          </select>
-        </div>
+    <div class="tableContainer has-select">
+      <p>特殊考核</p>
+      <div class="form-group sel-in-tab">
+        <select class="form-control sel" name="">
+          <option value="" ng-repeat="item in studyStations">{{item}}</option>
+        </select>
+        <i data-toggle="modal" data-target="#basic" class="glyphicon glyphicon-plus icon cursor-pointer"></i>
       </div>
-    </div>
-    <div class="form-horizontal form-group date-select-box">
-      <div class="col-md-12">
-        <label for="" class="col-md-4 control-label">选择年月</label>
-        <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
-          <input type="text" class="form-control" readonly>
-          <span class="input-group-btn">
-          <button class="btn default" type="button"><span class="glyphicon glyphicon-calendar"></span></button>
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="form-group btn-box">
-      <button class="btn btn-warning margin-right-10">查询</button>
-      <button class="btn btn-default">导出</button>
-    </div>
-  </form>
-  <div class="tableContainer">
-    <p>标准考核</p>
-    <div class="innerContainer">
-      <table class="text-center table-part">
+      <table class="text-center cover-tab margin-top-20">
         <thead>
           <tr>
-            <td>姓名</td>
-            <td colspan="5">标准考核项</td>
+            <td ng-repeat="i in specialEvaluates">{{i}}</td>
+            <!-- <td colspan="5">标准考核项</td> -->
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="i in evaluteItem">
+          <tr ng-repeat="i in specialEvaluteVals">
+            <td>{{$index + 1}}</td>
             <td>{{i.name}}</td>
-            <td>{{i.eVal1}}</td>
-            <td>{{i.eVal2}}</td>
-            <td>{{i.eVal3}}</td>
-            <td>{{i.eVal4}}</td>
-            <td>{{i.eVal5}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.level}}</td>
+            <td>{{i.reason}}</td>
+            <td>{{i.coin}}</td>
+            <td><i class="glyphicon glyphicon-pencil cursor-pointer"></i></td>
+            <td><i class="glyphicon glyphicon-remove-sign cursor-pointer"></i></td>
           </tr>
         </tbody>
       </table>
-      <div class="remarks-part">
-        <ul ng-repeat="i in evaluateRemarks">
-          <li><span>{{$index + 1}}.</span>{{i}}</li>
-        </ul>
-        <button class="btn margin-left-35 btn-sm btn-default" type="button" name="button">维护</button>
-      </div>
     </div>
-  </div>
-  <div class="tableContainer has-select">
-    <p>特殊考核</p>
-    <div class="form-group sel-in-tab">
-      <select class="form-control sel" name="">
-        <option value="" ng-repeat="item in studyStations">{{item}}</option>
-      </select>
-      <i data-toggle="modal" data-target="#basic" class="glyphicon glyphicon-plus icon cursor-pointer"></i>
-    </div>
-    <table class="text-center cover-tab margin-top-20">
-      <thead>
-        <tr>
-          <td ng-repeat="i in specialEvaluates">{{i}}</td>
-          <!-- <td colspan="5">标准考核项</td> -->
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="i in specialEvaluteVals">
-          <td>{{$index + 1}}</td>
-          <td>{{i.name}}</td>
-          <td>{{i.date}}</td>
-          <td>{{i.level}}</td>
-          <td>{{i.reason}}</td>
-          <td>{{i.coin}}</td>
-          <td><i class="glyphicon glyphicon-pencil cursor-pointer"></i></td>
-          <td><i class="glyphicon glyphicon-remove-sign cursor-pointer"></i></td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </div>
+
 <div class="modal fade" id="basic" tabindex="-1" role="basic" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

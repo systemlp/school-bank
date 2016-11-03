@@ -9,12 +9,9 @@
 }
 .tableContainer {
   background-color: #4D4D4D;
-  margin: 0 15px 10px;
-}
-.tableContainer {
+  margin: 0 0 10px;
   color: #fff;
-  padding: 1%;
-  box-sizing: border-box;
+  padding: 10px;
 }
 .innerContainer {
   display: flex;

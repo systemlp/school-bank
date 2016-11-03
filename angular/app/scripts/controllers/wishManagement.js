@@ -10,7 +10,7 @@
 angular.module('learnAngularApp').controller('wishManagementCtrl', function($scope, $rootScope, $location) {
   this.awesomeThings = ['HTML5 Boilerplate', 'AngularJS', 'Karma'];
   if ($().datepicker) {
-    $('.date-picker').datepicker({language: "zh-CN", autoclose: true,clearBtn:true});
+    $('.date-picker').datepicker({language: "zh-CN", autoclose: true, clearBtn: true, todayBtn: "linked", todayHighlight: true});
   };
 
 });

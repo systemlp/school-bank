@@ -8,29 +8,6 @@
  *
  * Main module of the application.
  */
-// .config([
-//   '$rootScope',
-//   function($rootScope) {
-//     $rootScope.$on('$locationChangeStart', function(event, next, current) {
-//       // console.log("user--->" + $rootScope.currentUser);
-//       // console.log("userType--->" + $rootScope.currentUserType);
-//       $rootScope.hideNavAndFoot = false;
-//       if (next.split("/").reverse()[0] === "login") {
-//         $rootScope.hideNavAndFoot = true;
-//       }
-//       if (!$rootScope.currentUser) {
-//         $rootScope.showLoading = false;
-//         $rootScope.currentUser = null;
-//         if (location.href.indexOf("appDetail") !== -1 || location.href.indexOf("jbrDetails") !== -1 || location.href.indexOf("idea") !== -1) {
-//           $rootScope.location = location.href;
-//           $state.go("login");
-//         } else if (versionProvider.internalOnly) {
-//           $state.go("login");
-//         }
-//       }
-//     });
-//   }
-// ])
 angular.module('learnAngularApp', [
   'ngAnimate',
   'ngAria',
@@ -98,7 +75,7 @@ angular.module('learnAngularApp', [
     console.log("user--->" + $rootScope.currentUser);
     $rootScope.hideNav = false;
     $rootScope.isLogin = false;
-    $rootScope.menuClose=false;
+    $rootScope.menuClose = false;
     if (next.split("/").reverse()[0] != '') {
       $rootScope.hideNav = true;
       $rootScope.isLogin = true;
