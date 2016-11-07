@@ -493,3 +493,7 @@ label {
 .modal .modal-full {
     width: 100%;
 }
+
+.btn-gray {
+  background-color: #ddd;
+}

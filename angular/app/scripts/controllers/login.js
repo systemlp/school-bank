@@ -22,7 +22,7 @@ angular.module('learnAngularApp').controller('loginCtrl', function($scope, $root
       var currentUser = {
         'name': name
       };
-      sessionStorage.setItem("currentUser", angular.toJson(currentUser,true));
+      sessionStorage.setItem("currentUser", angular.toJson(currentUser, true));
       $location.path("home");
     }
   };
