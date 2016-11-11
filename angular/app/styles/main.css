@@ -460,6 +460,10 @@ body {
   background-color: #EEEEEE;
 }
 
+.main-container>div{
+  min-width: 1024px;
+}
+
 .main-container .page-caption {
   color: #777;
   border-bottom: 1px solid #D1D1D1;
